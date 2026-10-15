@@ -84,30 +84,21 @@ Use [`blogger-theme.xml`](file:///l:/barber/blogger-theme.xml) if you want your 
 
 ## 🖼️ PLACEMENT 3: Handling Product Images on Blogger
 
-On a local PC, images load from the local `images/` folder. When hosted on Blogger (`yourblog.blogspot.com`), you have 3 easy options for images:
+**All images are already 100% pre-wired to your live GitHub CDN!**
 
-### Option 1: Free Built-In SVG Placeholder (Zero Setup Needed)
-The theme and post already include an automatic fallback engine. If any image file is not found, the site displays a sleek, branded dark-mode card with a barber pole icon and `HAIRCUTZONEPRO LAB` badge. No broken "X" icons will ever appear.
+Because you pushed your assets to `https://github.com/Bimal-Web/Affilate-marketing-----blogging-site`, both [`blogger-theme.xml`](file:///l:/barber/blogger-theme.xml) and [`blogger-article-post.html`](file:///l:/barber/blogger-article-post.html) now directly reference the global jsDelivr CDN:
+```text
+https://cdn.jsdelivr.net/gh/Bimal-Web/Affilate-marketing-----blogging-site@main/images/[1-100].jpg
+https://cdn.jsdelivr.net/gh/Bimal-Web/Affilate-marketing-----blogging-site@main/images/article[1-6].jpg
+```
 
-### Option 2: Host `images/` on GitHub Pages (Recommended — 2 Minutes)
-1. Create a free GitHub repository (e.g. `haircut-assets`).
-2. Upload the `images` folder from `l:\barber\images` into the repo.
-3. Turn on **GitHub Pages** in Settings → Pages.
-4. In `blogger-theme.xml` (or in Blogger Theme HTML editor), find line:
-   ```javascript
-   window.IMAGE_BASE_URL = '';
-   ```
-   and change it to your GitHub Pages URL:
-   ```javascript
-   window.IMAGE_BASE_URL = 'https://yourusername.github.io/haircut-assets/';
-   ```
-   All 100 images will instantly stream through GitHub's worldwide global CDN!
-
-### Option 3: Blogger Native Image Uploader
-1. In Blogger, create a new draft post titled *"Assets"* (keep it in Draft, don't publish).
-2. Click the **Insert Image** button and upload your product photos from `l:\barber\images\`.
-3. Blogger will assign each image a high-speed Google CDN URL (`https://blogger.googleusercontent.com/img/b/...`).
-4. You can paste these Google URLs directly into your featured cards.
+### What This Means For You:
+1. **Zero Setup Needed**: When you install `blogger-theme.xml` or publish `blogger-article-post.html`, all 100 product images and article hero banners will load instantly worldwide.
+2. **Post Thumbnails Auto-Generate**: The first image in `blogger-article-post.html` is the high-res hero banner (`article1.jpg`), which Blogger will automatically use as the thumbnail across your blog feed and social cards.
+3. **Automatic SVG Fallback Protection**: If any image connection is interrupted or delayed, the built-in SVG fallback engine will display a sleek, dark-mode barber badge (`💈 HAIRCUTZONEPRO LAB`) rather than an empty or broken box.
+4. **How to Change/Add Future Images**:
+   - To update any existing product photo, replace the image file in your GitHub repository `images/` folder (e.g. `1.jpg`) and push.
+   - Or paste any direct image URL (from Amazon or Blogger uploader) into the corresponding `src="..."` attribute.
 
 ---
 
