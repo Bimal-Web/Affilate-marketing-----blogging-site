@@ -3965,7 +3965,7 @@
     <script>//<![CDATA[
 
         // Image CDN & Fallback Engine (Configurable for Blogger / GitHub / Cloudinary)
-        window.IMAGE_BASE_URL = window.IMAGE_BASE_URL || '';
+        window.IMAGE_BASE_URL = window.IMAGE_BASE_URL || 'https://cdn.jsdelivr.net/gh/Bimal-Web/Affilate-marketing-----blogging-site@main/';
         document.addEventListener('DOMContentLoaded', () => {
             if (window.IMAGE_BASE_URL) {
                 document.querySelectorAll('img[src^="images/"]').forEach(img => {
